@@ -1,0 +1,17 @@
+version: '3.8'
+
+services:
+  devcontainer:
+    image: mcr.microsoft.com/dotnet/sdk:6.0
+    container_name: psiuweb_net_devcontainer
+    volumes:
+      - ../..:/workspaces:cached
+    command: sleep infinity
+    network_mode: service:db
+
+  db:
+    image: mcr.microsoft.com/mssql/server:2019-latest
+    restart: unless-stopped
+    environment:
+      SA_PASSWORD: Admin#2023
+      ACCEPT_EULA: Y

@@ -1,0 +1,34 @@
+{
+	"dockerComposeFile": "docker-compose.yml",
+	"service": "devcontainer",
+	"workspaceFolder": "/workspaces/${localWorkspaceFolderBasename}",
+	"postAttachCommand": "dotnet watch run --urls http://0.0.0.0:5000",
+	"customizations": {
+		"vscode": {
+			"settings": { 
+				"mssql.connections": [
+					{
+						"server": "localhost,1433",
+						"database": "",
+						"authenticationType": "SqlLogin",
+						"user": "sa",
+						"password": "Admin#2023",
+						"emptyPasswordInput": false,
+						"savePassword": false,
+						"profileName": "mssql-container"
+					}
+				]
+			},
+			"extensions": [
+				"ms-dotnettools.csharp",
+				"ms-mssql.mssql",
+				"jorgeserrano.vscode-csharp-snippets",
+				"kreativ-software.csharpextensions",
+				"ms-dotnettools.vscodeintellicode-csharp",
+				"ms-dotnettools.csdevkit",
+				"dbaeumer.vscode-eslint"
+			]			
+		}
+	},
+	"forwardPorts": [5000, 1433]
+}

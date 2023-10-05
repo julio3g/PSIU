@@ -1,0 +1,73 @@
+﻿@model Psico
+
+<div class="content-header">
+    <div class="container">
+        <div class="row mb-2">
+            <div class="col-6">
+                <h1 class="m-0">
+                    Editar: <small>Psicólogo</small>
+                </h1>
+            </div>
+            <div class="col-6">
+                <ol class="breadcrumb float-sm-right">
+                    <li class="breadcrumb-item">
+                        <a asp-action="Index"
+                            asp-controller="Psico">
+                            Listagem
+                        </a>
+                    </li>
+                </ol>
+            </div>
+        </div>
+    </div>
+</div>
+<hr />
+<div class="container">
+    <div class="row">
+        <form asp-action="Edit" style="width:100%;">
+            <div asp-validation-summary="ModelOnly"></div>
+            <input type="hidden" asp-for="Id" />
+
+            <div class="row">
+                <div class="col-12">
+                    <div class="form-group">
+                        <label asp-for="Name" class="control-label"></label>
+                        <input asp-for="Name" class="form-control" 
+                            placeholder="Nome completo"/>
+                        <span asp-validation-for="Name" class="text-danger"></span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-12">
+                    <div class="form-group">
+                        <label asp-for="Crp" class="control-label"></label>
+                        <input asp-for="Crp" class="form-control" 
+                            placeholder="Crp"/>
+                        <span asp-validation-for="Crp" class="text-danger"></span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-12">
+                    <div class="form-group">
+                        <label asp-for="BirthDate" class="control-label"></label>
+                        <input asp-for="BirthDate" class="form-control"
+                               placeholder="__/__/____" />
+                        <span asp-validation-for="BirthDate" class="text-danger"></span>
+                    </div>
+                </div>
+            </div>
+
+            <hr />
+
+            <div class="form-group">
+                <input type="submit" value="Atualizar" 
+                    class="btn btn-primary" />
+            </div>
+
+        </form>
+    </div>
+</div>
